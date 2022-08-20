@@ -1,0 +1,45 @@
+import random
+
+logo ="""
+                                                   | |              
+   __ _ _   _  ___  ___ ___   _ __  _   _ _ __ ___ | |__   ___ _ __ 
+  / _` | | | |/ _ \/ __/ __| | '_ \| | | | '_ ` _ \| '_ \ / _ \ '__|
+ | (_| | |_| |  __/\__ \__ \ | | | | |_| | | | | | | |_) |  __/ |   
+  \__, |\__,_|\___||___/___/ |_| |_|\__,_|_| |_| |_|_.__/ \___|_|   
+   __/ |                                                            
+  |___/                                                             
+  """
+print(logo)
+
+random_number= random.randint(1,100)
+#print(f"ramdom number={random_number}")
+level=str(input("enter the level do you want(easy/hard)").lower())
+if level =="hard":
+    life=5
+elif level=="easy":
+    life=10   
+
+#define function to guess the number
+def check_number(random, guess):
+    """It compare random number and guess number"""
+    global life
+    if guess >random:
+        print("too high")
+        life-=1
+    elif guess < random:
+        print("too low") 
+        life-=1
+    else:
+        print(f"you guess it and number={guess}")
+        life=-1    
+
+#calling function to guess the number
+while life>0:
+    print(f"your life is {life}")
+    guess_number= int(input("make a guess"))        
+    check_number(random_number,guess_number)
+
+
+if life==0:
+    print("you are out of move. You lose!!")
+    print(f"the number is {random_number}")
