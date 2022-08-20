@@ -1,0 +1,52 @@
+#calculator 
+
+from multiprocessing.connection import answer_challenge
+
+
+def add(n1, n2):
+    return n1+n2
+
+def subtract(n1, n2):
+    return n1-n2
+
+def multiply(n1, n2):
+    return n1*n2
+
+def division(n1, n2):
+    return n1/n2    
+
+operations ={
+"+":add,
+"-":subtract,
+"*":multiply,
+"/":division
+}
+
+def calculator():
+        
+    num1 = float(input("what is the first number?:"))
+    for signs in operations:
+        print(signs)
+    check=True
+
+    while check:
+        operation_symbol = input("Pick an opeartions ") 
+        num2 = float(input("what is the next number?: "))
+        calculation_function = operations[operation_symbol]
+        answer=calculation_function(num1, num2)
+
+        print(f"{num1} {operation_symbol} {num2}= {answer}")
+
+
+
+        test= input("Do you want to calculate further ?? Yes?No").lower()
+        if test=="yes":
+            num1=answer
+        else:
+            check=False
+            calculator()
+
+
+
+calculator()
+
