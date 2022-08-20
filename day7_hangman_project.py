@@ -96,7 +96,52 @@ stages = [
     """]
 
  
-from list import word_list
+word_list = [
+'arrangement',
+'attempt',
+'border',
+'brick',
+'customs',
+'discussion',
+'essential',
+'exchange',
+'explanation',
+'fireplace',
+'floating',
+'garage',
+'grabbed',
+'grandmother',
+'heading',
+'independent',
+'instant',
+'manufacturing',
+'mathematics',
+'memory',
+'mysterious',
+'neighborhood',
+'occasionally',
+'official',
+'policeman',
+'positive',
+'possibly',
+'practical',
+'promised',
+'remarkable',
+'require',
+'satisfied',
+'scared',
+'selection',
+'shaking',
+'shallow',
+'simplest',
+'slight',
+'slope',
+'species',
+'thumb',
+'tobacco'
+'treated',
+'vessels',
+]
 choosen_word =random.choice(word_list)
 
 print(f"the word is {choosen_word}")
