@@ -21,5 +21,5 @@ if lguess=="right":
         print("crocodile!! \n game over!!")    
 else:
     print("fire!! \n game over")    
-#tresure island
+
 
